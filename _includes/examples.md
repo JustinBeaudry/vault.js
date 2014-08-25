@@ -1,9 +1,3 @@
-vault.js
-===============
-
-Wrapper for localStorage, sessionStorage, document.cookie that sets and gets true values.
-Adds some cookie functionality to localStorage. For now, just expires. More coming soon.
-
 ### Usage
 
 #### Local, Session, Cookie
@@ -117,8 +111,3 @@ Vault.Session.list();
 Vault.Local.list();
 Vault.Cookie.list();
 ```
-
-#### TODO
-- handle storage limit errors
-- add support to request more storage
-- handle storage events

@@ -1,80 +1,51 @@
+---
+title: Browser Vault
+---
 <!DOCTYPE html>
 <html>
 <head>
-<title>vault.js demo</title>
-<style type="text/css">
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+<title>Browser Vault</title>
+<link rel="shortcut icon" href="assets/icon-64.png" type="image/png">
+<link href='//fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<style type='text/css'>
+html,
+body {
+  font-family: 'Dosis', sans-serif;
 }
-ol > li {
-    margin-bottom: 10px;
+body {
+  padding: 50px;
 }
-input {
-    width: 200px;
+.icon {
+  margin: 0 15px 15px 0;
+}
+h1 {
+  font-size: 52px;
+}
+h2 {
+
 }
 </style>
 </head>
 <body>
-<h1>vault.js - a wrapper for localStorage, sessionStorage and document.cookie</h1>
-<ol>
-    <li>Open the console</li>
-    <li>Select storage type:
-        <select id="type">
-            <option value="Local">localStorage</option>
-            <option value="Session">sessionStorage</option>
-            <option value="Cookie">Cookie</option>
-        </select>
-    </li>
-    <li>
-        <form id="set">
-            <ul>
-                <li>name = <input type="text" value="Jimmy" id="name" placeholder="name"></li>
-                <li>age = <input type="number" value="33" id="number" placeholder="age"></li>
-                <li>array = <input type="text" value="[7,13,27]" id="arr"></li>
-                <li>object = <input type="text" value='{ "name":"Jimmy", "age":33 }' id="obj"></li>
-            </ul>
-            <input type="submit" value="set values">
-        </form>
-    </li>
-    <li><a id="list" href="#list">List all values</a></li>
-    <li><a href='javascript:alert(Vault.Local.get("age"));'>alert Vault.Local.get("age")</a></li>
-    <li><a href='javascript:alert(Vault.Local.get("arr"));'>alert Vault.Local.get("arr")</a></li>
-    <li><a href='javascript:alert(Vault.Local.get("obj").name);'>alert Vault.Local.get("ojb").name</a></li>
-    <li><a id="clear" href="#clear">Clear all values</a></li>
-</ol>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-<script src="dist/vault.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-$("#set").submit(function(e) {
-    e.preventDefault();
-    var _type = $("#type").val();
-    var _name = $("#name").val();
-    console.log('executing: Vault.'+_type+'.set("name", '+_name+');');
-    Vault[_type].set("name", _name, '2014-05-07');
-    var _number = $("#number").val();
-    console.log('executing: Vault.'+_type+'.set("age", '+_number+');');
-    Vault[_type].set("age", _number);
-    var _arr = $("#arr").val();
-    console.log('executing: Vault.'+_type+'.set("arr", '+_arr+');');
-    Vault[_type].set("arr", _arr);
-    var _obj = $("#obj").val();
-    console.log('executing: Vault.'+_type+'.set("obj", '+_obj+');');
-    Vault[_type].set("obj", _obj);
-});
-$("#list").click(function(e) {
-    e.preventDefault();
-    var _type = $("#type").val();
-    console.log('executing: Vault.'+_type+'.list();');
-    Vault[_type].list();
-});
-$("#clear").click(function(e) {
-    e.preventDefault();
-    var _type = $("#type").val();
-    console.log('executing: Vault.'+_type+'.clear();');
-    Vault[_type].clear();
-});
-</script>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+      <img class='icon pull-left' src='assets/icon.png' width='100' height='100' alt=''>
+      <h1>Vault.js</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <h2 class='col-sm-6 col-sm-offset-3'>a normalizer for localStorage, sessionStorage and document.cookie</h2>
+  </div>
+  <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+      {% markdown examples.md %}
+    </div>
+  </div>
+</div>
+
+<a href="https://github.com/jimmybyrum/vault.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 </body>
 </html>
